@@ -1,0 +1,6 @@
+define XMSIMRC	( /opt/coe/cadence/XCELIUM/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
+define AMSRC	( /opt/coe/cadence/XCELIUM/tools/xcelium/files/amsrc, ~/.amsrc )
+include ./hdlrun.var
+define SNAPSHOT worklib.CambriconD:sv
+DEFINE RUNMODEDEFAULT 1
+DEFINE LIB_MAP ( + => worklib )

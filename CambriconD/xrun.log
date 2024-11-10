@@ -1,0 +1,19 @@
+xrun: 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	22.03-s012: Started on Nov 08, 2024 at 12:04:44 CST
+xrun
+	cambricon_d.sv
+file: cambricon_d.sv
+	module worklib.CambriconD:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		CambriconD
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: ....................
+                        convolution(layer_input, weights[layer_counter], layer_output);
+                                              |
+xmelab: *E,TYCMPAT (./cambricon_d.sv,89|46): formal and actual do not have assignment compatible data types (expecting datatype compatible with 'unpacked array [63:0] of packed array [15:0] of logic' but found 'unpacked array [255:0] of packed array [15:0] of logic' instead).
+ Done
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun	22.03-s012: Exiting on Nov 08, 2024 at 12:04:44 CST  (total: 00:00:00)
