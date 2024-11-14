@@ -1,4 +1,4 @@
-`timescale 1ns/1ps;
+`timescale 1ns/1ps
 module tb_PE_array_simulator;
 
   // Parameters
@@ -12,11 +12,11 @@ module tb_PE_array_simulator;
   parameter M = 4;
 
   // Testbench Signals
-  real A [INPUT_SIZE-1:0];
-  real W [INPUT_SIZE-1:0];
+  real A [INPUT_SIZE];
+  real W [INPUT_SIZE];
   integer int_dot_product;
-  integer quantized_inliers [0:INPUT_SIZE-1];
-  logic overflow_flags [0:INPUT_SIZE-1];
+  integer quantized_inliers [INPUT_SIZE];
+  logic overflow_flags [INPUT_SIZE];
   real fp_dot_product;
   
   // Instantiate the PE_array_simulator module
@@ -38,7 +38,7 @@ module tb_PE_array_simulator;
       A[i] = $random;
       W[i] = $random;
     end
-
+    #10;
     // Display the initial values of A and W for debugging
     $display("Initial A values:");
     for (i = 0; i < INPUT_SIZE; i = i + 1) begin
@@ -50,7 +50,7 @@ module tb_PE_array_simulator;
     end
     
     // Wait for a few time units to simulate the PE array
-    #10;
+    #1000;
     
     // Display the results
     $display("\nSimulation Results:");
@@ -66,6 +66,7 @@ module tb_PE_array_simulator;
     end
 
     // End the simulation
+
     $finish;
   end
 

@@ -1,4 +1,4 @@
-`timescale 1ns/1ps;
+`timescale 1ns/1ps
 module PE_array_simulator #(parameter PE_ARRAY_SIZE_X = 128,
 parameter PE_ARRAY_SIZE_Y = 128,
 parameter INT_MAX = 2147483647,  // Define INT_MAX 32 bit 
@@ -8,35 +8,36 @@ parameter THRESHOLD = 100.0,
 parameter N = 60,
 parameter M = 4 
 )(
-    input real A [0:INPUT_SIZE-1],  
-    input real W [0:INPUT_SIZE-1],  
+
+    input real A [INPUT_SIZE],  
+    input real W [INPUT_SIZE],  
     output integer int_dot_product, 
-    output integer quantized_inliers [0:INPUT_SIZE-1],
-    output  overflow_flags [0:INPUT_SIZE-1],
+    output integer quantized_inliers [INPUT_SIZE],
+    output  overflow_flags [INPUT_SIZE],
     output real fp_dot_product     
 );
 
 
 
-integer quantized_A [0:INPUT_SIZE-1];  
-logic overflow_flags [0:INPUT_SIZE-1];
+integer quantized_A [INPUT_SIZE];  
+logic overflow_flags [INPUT_SIZE];
 
 function void quantize_activations (
-    input real A[0:INPUT_SIZE-1], 
-    input real W[0:INPUT_SIZE-1], 
-    output integer quantized_A[0:INPUT_SIZE-1], 
-    output logic overflow_flags[0:INPUT_SIZE-1]
+    input real A[INPUT_SIZE], 
+    input real W[INPUT_SIZE], 
+    output integer quantized_A[INPUT_SIZE], 
+    output logic overflow_flags[INPUT_SIZE]
 );
     integer outlier_count = 0;
     for (int i = 0; i < INPUT_SIZE; i++) begin
         if (A[i]> THRESHOLD) begin
             overflow_flags[i] = 1;  
             outlier_count = outlier_count + 1;
-            $display ("ffffff") ;
+           
         end else begin 
             overflow_flags[i] = 0;  
             quantized_A[i] = $rtoi(A[i]); 
-            $display ("kkkkkkkkkkkkkkkkkkkk") ;
+            $display("Quantized A[%0d] = %0d", i, quantized_A[i]);
         end
     end
     
@@ -54,10 +55,10 @@ function void quantize_activations (
 endfunction
 
 function void calculate_dot_product (
-    input real A[0:INPUT_SIZE-1], 
-    input integer quantized_A[0:INPUT_SIZE-1], 
-    input real W[0:INPUT_SIZE-1], 
-    input logic overflow_flags[0:INPUT_SIZE-1], 
+    input real A[INPUT_SIZE], 
+    input integer quantized_A[INPUT_SIZE], 
+    input real W[INPUT_SIZE], 
+    input logic overflow_flags[INPUT_SIZE], 
     output integer int_dot_product, 
     output real fp_dot_product, 
     output integer int_multiply, 
@@ -79,7 +80,8 @@ function void calculate_dot_product (
     end
 endfunction
 
-task  simulate_PE_array();
+task  simulate_PE_array(input real A[INPUT_SIZE], 
+    input real W[INPUT_SIZE] );
     integer int_dot_product, fp_dot_product;
     integer int_multiply, fp_multiply;
     
@@ -88,9 +90,18 @@ task  simulate_PE_array();
     quantized_inliers = quantized_A;
 endtask
 
+
+
 initial begin
-    simulate_PE_array();
+    #50;
+    /*
+    for (integer i = 0; i < INPUT_SIZE; i = i + 1) begin
+      $display("A[%d] = %f", i, A[i]);
+      $display("W[%d] = %f", i, W[i]);
+    end */
+    simulate_PE_array(A, W);
     
 end
+
 
 endmodule

@@ -1,35 +1,29 @@
 xrun: 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	22.03-s012: Started on Nov 14, 2024 at 02:34:28 CST
+TOOL:	xrun	22.03-s012: Started on Nov 14, 2024 at 03:43:30 CST
 xrun
 	pe_array.sv
 	tb_cambricon.sv
 Recompiling... reason: file './pe_array.sv' is newer than expected.
-	expected: Thu Nov 14 02:33:08 2024
-	actual:   Thu Nov 14 02:34:24 2024
+	expected: Thu Nov 14 03:41:37 2024
+	actual:   Thu Nov 14 03:43:27 2024
 file: pe_array.sv
-`timescale 1ns/1ps;
-                  |
-xmvlog: *W,UEXPSC (pe_array.sv,1|18): Ignored unexpected semicolon following SystemVerilog description keyword (1).
 parameter INT_MIN = -2147483648, // Define INT_MIN 32 bit
                               |
 xmvlog: *W,SGNOVF (pe_array.sv,5|30): sign overflow during conversion from text [2.5(IEEE)] (32 bits).
     integer outlier_count = 0;
                           |
-xmvlog: *W,VARIST (pe_array.sv,30|26): Local static variable with initializer requires 'static' keyword.
-logic overflow_flags [0:INPUT_SIZE-1];
+xmvlog: *W,VARIST (pe_array.sv,31|26): Local static variable with initializer requires 'static' keyword.
+logic overflow_flags [INPUT_SIZE];
                    |
-xmvlog: *W,ILLPDX (pe_array.sv,22|19): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'overflow_flags') [12.3.4(IEEE-2001)].
+xmvlog: *W,ILLPDX (pe_array.sv,23|19): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'overflow_flags') [12.3.4(IEEE-2001)].
 	module worklib.PE_array_simulator:sv
 		errors: 0, warnings: 3
 file: tb_cambricon.sv
-`timescale 1ns/1ps;
-                  |
-xmvlog: *W,UEXPSC (tb_cambricon.sv,1|18): Ignored unexpected semicolon following SystemVerilog description keyword (1).
   parameter INT_MIN = -2147483648;
                                 |
 xmvlog: *W,SGNOVF (tb_cambricon.sv,8|32): sign overflow during conversion from text [2.5(IEEE)] (32 bits).
-	Total errors/warnings found outside modules and primitives:
-		errors: 0, warnings: 2
+	module worklib.tb_PE_array_simulator:sv
+		errors: 0, warnings: 1
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
@@ -37,14 +31,16 @@ xmvlog: *W,SGNOVF (tb_cambricon.sv,8|32): sign overflow during conversion from t
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.PE_array_simulator:sv <0x791cbd94>
-			streams:   4, words:  3682
+		worklib.PE_array_simulator:sv <0x0d4c855b>
+			streams:   4, words:  3955
+		worklib.tb_PE_array_simulator:sv <0x3172070e>
+			streams:   7, words:  9040
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
-		Registers:              21      34
+		Registers:              23      36
 		Scalar wires:            1       -
 		Vectored wires:          6       -
 		Initial blocks:          3       3
@@ -55,134 +51,6 @@ Loading snapshot worklib.tb_PE_array_simulator:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /opt/coe/cadence/XCELIUM/tools/xcelium/files/xmsimrc
 xcelium> run
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkk
 Initial A values:
 A[          0] = 303379748.000000
 A[          1] = -2071669239.000000
@@ -441,269 +309,323 @@ W[        124] = -2048582133.000000
 W[        125] = 1690844617.000000
 W[        126] = -1162786699.000000
 W[        127] = 902676331.000000
+Quantized A[1] = -2071669239
+Quantized A[3] = -1295874971
+Quantized A[8] = -487095099
+Quantized A[10] = -1993157102
+Quantized A[12] = -201295128
+Quantized A[14] = -1767155667
+Quantized A[15] = -1309711773
+Quantized A[16] = -1069866368
+Quantized A[18] = -887079274
+Quantized A[19] = -2034485235
+Quantized A[21] = -2129180158
+Quantized A[24] = -445445430
+Quantized A[30] = -562756932
+Quantized A[31] = -2049467893
+Quantized A[33] = -1647550405
+Quantized A[34] = -1088212354
+Quantized A[39] = -809216353
+Quantized A[40] = -1379155877
+Quantized A[41] = -1532087735
+Quantized A[42] = -335626025
+Quantized A[44] = -517157182
+Quantized A[45] = -1149085065
+Quantized A[51] = -1611485633
+Quantized A[53] = -954594162
+Quantized A[56] = -1751537617
+Quantized A[57] = -1344776609
+Quantized A[59] = -217507098
+Quantized A[61] = -313299750
+Quantized A[62] = -628432203
+Quantized A[64] = -395047728
+Quantized A[67] = -18910467
+Quantized A[69] = -1277594009
+Quantized A[73] = -2109789180
+Quantized A[76] = -1153047946
+Quantized A[78] = -1559815610
+Quantized A[80] = -630277452
+Quantized A[82] = -473616185
+Quantized A[83] = -2072517624
+Quantized A[84] = -22567171
+Quantized A[85] = -1908961252
+Quantized A[86] = -315356966
+Quantized A[88] = -1175124877
+Quantized A[91] = -588250951
+Quantized A[97] = -406604081
+Quantized A[98] = -47651590
+Quantized A[102] = -1801811415
+Quantized A[103] = -488278843
+Quantized A[105] = -165484820
+Quantized A[109] = -808009569
+Quantized A[112] = -1127241607
+Quantized A[123] = -795498335
+Quantized A[124] = -41194757
+Quantized A[125] = -142438161
+Quantized A[127] = -941074801
 
 Simulation Results:
 Integer Dot Product:           x
 Floating Point Dot Product: 0.000000
 Quantized Inliers:
-quantized_inliers[          0] =           0
-quantized_inliers[          1] =           0
-quantized_inliers[          2] =           0
-quantized_inliers[          3] =           0
-quantized_inliers[          4] =           0
-quantized_inliers[          5] =           0
-quantized_inliers[          6] =           0
-quantized_inliers[          7] =           0
-quantized_inliers[          8] =           0
-quantized_inliers[          9] =           0
-quantized_inliers[         10] =           0
-quantized_inliers[         11] =           0
-quantized_inliers[         12] =           0
-quantized_inliers[         13] =           0
-quantized_inliers[         14] =           0
-quantized_inliers[         15] =           0
-quantized_inliers[         16] =           0
-quantized_inliers[         17] =           0
-quantized_inliers[         18] =           0
-quantized_inliers[         19] =           0
-quantized_inliers[         20] =           0
-quantized_inliers[         21] =           0
-quantized_inliers[         22] =           0
-quantized_inliers[         23] =           0
-quantized_inliers[         24] =           0
-quantized_inliers[         25] =           0
-quantized_inliers[         26] =           0
-quantized_inliers[         27] =           0
-quantized_inliers[         28] =           0
-quantized_inliers[         29] =           0
-quantized_inliers[         30] =           0
-quantized_inliers[         31] =           0
-quantized_inliers[         32] =           0
-quantized_inliers[         33] =           0
-quantized_inliers[         34] =           0
-quantized_inliers[         35] =           0
-quantized_inliers[         36] =           0
-quantized_inliers[         37] =           0
-quantized_inliers[         38] =           0
-quantized_inliers[         39] =           0
-quantized_inliers[         40] =           0
-quantized_inliers[         41] =           0
-quantized_inliers[         42] =           0
-quantized_inliers[         43] =           0
-quantized_inliers[         44] =           0
-quantized_inliers[         45] =           0
-quantized_inliers[         46] =           0
-quantized_inliers[         47] =           0
-quantized_inliers[         48] =           0
-quantized_inliers[         49] =           0
-quantized_inliers[         50] =           0
-quantized_inliers[         51] =           0
-quantized_inliers[         52] =           0
-quantized_inliers[         53] =           0
-quantized_inliers[         54] =           0
-quantized_inliers[         55] =           0
-quantized_inliers[         56] =           0
-quantized_inliers[         57] =           0
-quantized_inliers[         58] =           0
-quantized_inliers[         59] =           0
-quantized_inliers[         60] =           0
-quantized_inliers[         61] =           0
-quantized_inliers[         62] =           0
-quantized_inliers[         63] =           0
-quantized_inliers[         64] =           0
-quantized_inliers[         65] =           0
-quantized_inliers[         66] =           0
-quantized_inliers[         67] =           0
-quantized_inliers[         68] =           0
-quantized_inliers[         69] =           0
-quantized_inliers[         70] =           0
-quantized_inliers[         71] =           0
-quantized_inliers[         72] =           0
-quantized_inliers[         73] =           0
-quantized_inliers[         74] =           0
-quantized_inliers[         75] =           0
-quantized_inliers[         76] =           0
-quantized_inliers[         77] =           0
-quantized_inliers[         78] =           0
-quantized_inliers[         79] =           0
-quantized_inliers[         80] =           0
-quantized_inliers[         81] =           0
-quantized_inliers[         82] =           0
-quantized_inliers[         83] =           0
-quantized_inliers[         84] =           0
-quantized_inliers[         85] =           0
-quantized_inliers[         86] =           0
-quantized_inliers[         87] =           0
-quantized_inliers[         88] =           0
-quantized_inliers[         89] =           0
-quantized_inliers[         90] =           0
-quantized_inliers[         91] =           0
-quantized_inliers[         92] =           0
-quantized_inliers[         93] =           0
-quantized_inliers[         94] =           0
-quantized_inliers[         95] =           0
-quantized_inliers[         96] =           0
-quantized_inliers[         97] =           0
-quantized_inliers[         98] =           0
-quantized_inliers[         99] =           0
-quantized_inliers[        100] =           0
-quantized_inliers[        101] =           0
-quantized_inliers[        102] =           0
-quantized_inliers[        103] =           0
-quantized_inliers[        104] =           0
-quantized_inliers[        105] =           0
-quantized_inliers[        106] =           0
-quantized_inliers[        107] =           0
-quantized_inliers[        108] =           0
-quantized_inliers[        109] =           0
-quantized_inliers[        110] =           0
-quantized_inliers[        111] =           0
-quantized_inliers[        112] =           0
-quantized_inliers[        113] =           0
-quantized_inliers[        114] =           0
-quantized_inliers[        115] =           0
-quantized_inliers[        116] =           0
-quantized_inliers[        117] =           0
-quantized_inliers[        118] =           0
-quantized_inliers[        119] =           0
-quantized_inliers[        120] =           0
-quantized_inliers[        121] =           0
-quantized_inliers[        122] =           0
-quantized_inliers[        123] =           0
-quantized_inliers[        124] =           0
-quantized_inliers[        125] =           0
-quantized_inliers[        126] =           0
-quantized_inliers[        127] =           0
+quantized_inliers[          0] =  2147483647
+quantized_inliers[          1] = -2071669239
+quantized_inliers[          2] =  2147483647
+quantized_inliers[          3] = -1295874971
+quantized_inliers[          4] =  2147483647
+quantized_inliers[          5] =  2147483647
+quantized_inliers[          6] =  2147483647
+quantized_inliers[          7] =  2147483647
+quantized_inliers[          8] =  -487095099
+quantized_inliers[          9] =  2147483647
+quantized_inliers[         10] = -1993157102
+quantized_inliers[         11] =  2147483647
+quantized_inliers[         12] =  -201295128
+quantized_inliers[         13] =  2147483647
+quantized_inliers[         14] = -1767155667
+quantized_inliers[         15] = -1309711773
+quantized_inliers[         16] = -1069866368
+quantized_inliers[         17] =  2147483647
+quantized_inliers[         18] =  -887079274
+quantized_inliers[         19] = -2034485235
+quantized_inliers[         20] =  2147483647
+quantized_inliers[         21] = -2129180158
+quantized_inliers[         22] =  2147483647
+quantized_inliers[         23] =  2147483647
+quantized_inliers[         24] =  -445445430
+quantized_inliers[         25] =  2147483647
+quantized_inliers[         26] =  2147483647
+quantized_inliers[         27] =  2147483647
+quantized_inliers[         28] =  2147483647
+quantized_inliers[         29] =  2147483647
+quantized_inliers[         30] =  -562756932
+quantized_inliers[         31] = -2049467893
+quantized_inliers[         32] =  2147483647
+quantized_inliers[         33] = -1647550405
+quantized_inliers[         34] = -1088212354
+quantized_inliers[         35] =  2147483647
+quantized_inliers[         36] =  2147483647
+quantized_inliers[         37] =  2147483647
+quantized_inliers[         38] =  2147483647
+quantized_inliers[         39] =  -809216353
+quantized_inliers[         40] = -1379155877
+quantized_inliers[         41] = -1532087735
+quantized_inliers[         42] =  -335626025
+quantized_inliers[         43] =  2147483647
+quantized_inliers[         44] =  -517157182
+quantized_inliers[         45] = -1149085065
+quantized_inliers[         46] =  2147483647
+quantized_inliers[         47] =  2147483647
+quantized_inliers[         48] =  2147483647
+quantized_inliers[         49] =  2147483647
+quantized_inliers[         50] =  2147483647
+quantized_inliers[         51] = -1611485633
+quantized_inliers[         52] =  2147483647
+quantized_inliers[         53] =  -954594162
+quantized_inliers[         54] =  2147483647
+quantized_inliers[         55] =  2147483647
+quantized_inliers[         56] = -1751537617
+quantized_inliers[         57] = -1344776609
+quantized_inliers[         58] =  2147483647
+quantized_inliers[         59] =  -217507098
+quantized_inliers[         60] =  2147483647
+quantized_inliers[         61] =  -313299750
+quantized_inliers[         62] =  -628432203
+quantized_inliers[         63] =  2147483647
+quantized_inliers[         64] =  -395047728
+quantized_inliers[         65] =  2147483647
+quantized_inliers[         66] =  2147483647
+quantized_inliers[         67] =   -18910467
+quantized_inliers[         68] =  2147483647
+quantized_inliers[         69] = -1277594009
+quantized_inliers[         70] =  2147483647
+quantized_inliers[         71] =  2147483647
+quantized_inliers[         72] =  2147483647
+quantized_inliers[         73] = -2109789180
+quantized_inliers[         74] =  2147483647
+quantized_inliers[         75] =  2147483647
+quantized_inliers[         76] = -1153047946
+quantized_inliers[         77] =  2147483647
+quantized_inliers[         78] = -1559815610
+quantized_inliers[         79] =  2147483647
+quantized_inliers[         80] =  -630277452
+quantized_inliers[         81] =  2147483647
+quantized_inliers[         82] =  -473616185
+quantized_inliers[         83] = -2072517624
+quantized_inliers[         84] =   -22567171
+quantized_inliers[         85] = -1908961252
+quantized_inliers[         86] =  -315356966
+quantized_inliers[         87] =  2147483647
+quantized_inliers[         88] = -1175124877
+quantized_inliers[         89] =  2147483647
+quantized_inliers[         90] =  2147483647
+quantized_inliers[         91] =  -588250951
+quantized_inliers[         92] =  2147483647
+quantized_inliers[         93] =  2147483647
+quantized_inliers[         94] =  2147483647
+quantized_inliers[         95] =  2147483647
+quantized_inliers[         96] =  2147483647
+quantized_inliers[         97] =  -406604081
+quantized_inliers[         98] =   -47651590
+quantized_inliers[         99] =  2147483647
+quantized_inliers[        100] =  2147483647
+quantized_inliers[        101] =  2147483647
+quantized_inliers[        102] = -1801811415
+quantized_inliers[        103] =  -488278843
+quantized_inliers[        104] =  2147483647
+quantized_inliers[        105] =  -165484820
+quantized_inliers[        106] =  2147483647
+quantized_inliers[        107] =  2147483647
+quantized_inliers[        108] =  2147483647
+quantized_inliers[        109] =  -808009569
+quantized_inliers[        110] =  2147483647
+quantized_inliers[        111] =  2147483647
+quantized_inliers[        112] = -1127241607
+quantized_inliers[        113] =  2147483647
+quantized_inliers[        114] =  2147483647
+quantized_inliers[        115] =  2147483647
+quantized_inliers[        116] =  2147483647
+quantized_inliers[        117] =  2147483647
+quantized_inliers[        118] =  2147483647
+quantized_inliers[        119] =  2147483647
+quantized_inliers[        120] =  2147483647
+quantized_inliers[        121] =  2147483647
+quantized_inliers[        122] =  2147483647
+quantized_inliers[        123] =  -795498335
+quantized_inliers[        124] =   -41194757
+quantized_inliers[        125] =  -142438161
+quantized_inliers[        126] =  2147483647
+quantized_inliers[        127] =  -941074801
 Overflow Flags:
-overflow_flags[          0] = 0
+overflow_flags[          0] = 1
 overflow_flags[          1] = 0
-overflow_flags[          2] = 0
+overflow_flags[          2] = 1
 overflow_flags[          3] = 0
-overflow_flags[          4] = 0
-overflow_flags[          5] = 0
-overflow_flags[          6] = 0
-overflow_flags[          7] = 0
+overflow_flags[          4] = 1
+overflow_flags[          5] = 1
+overflow_flags[          6] = 1
+overflow_flags[          7] = 1
 overflow_flags[          8] = 0
-overflow_flags[          9] = 0
+overflow_flags[          9] = 1
 overflow_flags[         10] = 0
-overflow_flags[         11] = 0
+overflow_flags[         11] = 1
 overflow_flags[         12] = 0
-overflow_flags[         13] = 0
+overflow_flags[         13] = 1
 overflow_flags[         14] = 0
 overflow_flags[         15] = 0
 overflow_flags[         16] = 0
-overflow_flags[         17] = 0
+overflow_flags[         17] = 1
 overflow_flags[         18] = 0
 overflow_flags[         19] = 0
-overflow_flags[         20] = 0
+overflow_flags[         20] = 1
 overflow_flags[         21] = 0
-overflow_flags[         22] = 0
-overflow_flags[         23] = 0
+overflow_flags[         22] = 1
+overflow_flags[         23] = 1
 overflow_flags[         24] = 0
-overflow_flags[         25] = 0
-overflow_flags[         26] = 0
-overflow_flags[         27] = 0
-overflow_flags[         28] = 0
-overflow_flags[         29] = 0
+overflow_flags[         25] = 1
+overflow_flags[         26] = 1
+overflow_flags[         27] = 1
+overflow_flags[         28] = 1
+overflow_flags[         29] = 1
 overflow_flags[         30] = 0
 overflow_flags[         31] = 0
-overflow_flags[         32] = 0
+overflow_flags[         32] = 1
 overflow_flags[         33] = 0
 overflow_flags[         34] = 0
-overflow_flags[         35] = 0
-overflow_flags[         36] = 0
-overflow_flags[         37] = 0
-overflow_flags[         38] = 0
+overflow_flags[         35] = 1
+overflow_flags[         36] = 1
+overflow_flags[         37] = 1
+overflow_flags[         38] = 1
 overflow_flags[         39] = 0
 overflow_flags[         40] = 0
 overflow_flags[         41] = 0
 overflow_flags[         42] = 0
-overflow_flags[         43] = 0
+overflow_flags[         43] = 1
 overflow_flags[         44] = 0
 overflow_flags[         45] = 0
-overflow_flags[         46] = 0
-overflow_flags[         47] = 0
-overflow_flags[         48] = 0
-overflow_flags[         49] = 0
-overflow_flags[         50] = 0
+overflow_flags[         46] = 1
+overflow_flags[         47] = 1
+overflow_flags[         48] = 1
+overflow_flags[         49] = 1
+overflow_flags[         50] = 1
 overflow_flags[         51] = 0
-overflow_flags[         52] = 0
+overflow_flags[         52] = 1
 overflow_flags[         53] = 0
-overflow_flags[         54] = 0
-overflow_flags[         55] = 0
+overflow_flags[         54] = 1
+overflow_flags[         55] = 1
 overflow_flags[         56] = 0
 overflow_flags[         57] = 0
-overflow_flags[         58] = 0
+overflow_flags[         58] = 1
 overflow_flags[         59] = 0
-overflow_flags[         60] = 0
+overflow_flags[         60] = 1
 overflow_flags[         61] = 0
 overflow_flags[         62] = 0
-overflow_flags[         63] = 0
+overflow_flags[         63] = 1
 overflow_flags[         64] = 0
-overflow_flags[         65] = 0
-overflow_flags[         66] = 0
+overflow_flags[         65] = 1
+overflow_flags[         66] = 1
 overflow_flags[         67] = 0
-overflow_flags[         68] = 0
+overflow_flags[         68] = 1
 overflow_flags[         69] = 0
-overflow_flags[         70] = 0
-overflow_flags[         71] = 0
-overflow_flags[         72] = 0
+overflow_flags[         70] = 1
+overflow_flags[         71] = 1
+overflow_flags[         72] = 1
 overflow_flags[         73] = 0
-overflow_flags[         74] = 0
-overflow_flags[         75] = 0
+overflow_flags[         74] = 1
+overflow_flags[         75] = 1
 overflow_flags[         76] = 0
-overflow_flags[         77] = 0
+overflow_flags[         77] = 1
 overflow_flags[         78] = 0
-overflow_flags[         79] = 0
+overflow_flags[         79] = 1
 overflow_flags[         80] = 0
-overflow_flags[         81] = 0
+overflow_flags[         81] = 1
 overflow_flags[         82] = 0
 overflow_flags[         83] = 0
 overflow_flags[         84] = 0
 overflow_flags[         85] = 0
 overflow_flags[         86] = 0
-overflow_flags[         87] = 0
+overflow_flags[         87] = 1
 overflow_flags[         88] = 0
-overflow_flags[         89] = 0
-overflow_flags[         90] = 0
+overflow_flags[         89] = 1
+overflow_flags[         90] = 1
 overflow_flags[         91] = 0
-overflow_flags[         92] = 0
-overflow_flags[         93] = 0
-overflow_flags[         94] = 0
-overflow_flags[         95] = 0
-overflow_flags[         96] = 0
+overflow_flags[         92] = 1
+overflow_flags[         93] = 1
+overflow_flags[         94] = 1
+overflow_flags[         95] = 1
+overflow_flags[         96] = 1
 overflow_flags[         97] = 0
 overflow_flags[         98] = 0
-overflow_flags[         99] = 0
-overflow_flags[        100] = 0
-overflow_flags[        101] = 0
+overflow_flags[         99] = 1
+overflow_flags[        100] = 1
+overflow_flags[        101] = 1
 overflow_flags[        102] = 0
 overflow_flags[        103] = 0
-overflow_flags[        104] = 0
+overflow_flags[        104] = 1
 overflow_flags[        105] = 0
-overflow_flags[        106] = 0
-overflow_flags[        107] = 0
-overflow_flags[        108] = 0
+overflow_flags[        106] = 1
+overflow_flags[        107] = 1
+overflow_flags[        108] = 1
 overflow_flags[        109] = 0
-overflow_flags[        110] = 0
-overflow_flags[        111] = 0
+overflow_flags[        110] = 1
+overflow_flags[        111] = 1
 overflow_flags[        112] = 0
-overflow_flags[        113] = 0
-overflow_flags[        114] = 0
-overflow_flags[        115] = 0
-overflow_flags[        116] = 0
-overflow_flags[        117] = 0
-overflow_flags[        118] = 0
-overflow_flags[        119] = 0
-overflow_flags[        120] = 0
-overflow_flags[        121] = 0
-overflow_flags[        122] = 0
+overflow_flags[        113] = 1
+overflow_flags[        114] = 1
+overflow_flags[        115] = 1
+overflow_flags[        116] = 1
+overflow_flags[        117] = 1
+overflow_flags[        118] = 1
+overflow_flags[        119] = 1
+overflow_flags[        120] = 1
+overflow_flags[        121] = 1
+overflow_flags[        122] = 1
 overflow_flags[        123] = 0
 overflow_flags[        124] = 0
 overflow_flags[        125] = 0
-overflow_flags[        126] = 0
+overflow_flags[        126] = 1
 overflow_flags[        127] = 0
-Simulation complete via $finish(1) at time 10 NS + 0
-./tb_cambricon.sv:69     $finish;
+Simulation complete via $finish(1) at time 1010 NS + 0
+./tb_cambricon.sv:70     $finish;
 xcelium> exit
-TOOL:	xrun	22.03-s012: Exiting on Nov 14, 2024 at 02:34:29 CST  (total: 00:00:01)
+TOOL:	xrun	22.03-s012: Exiting on Nov 14, 2024 at 03:43:30 CST  (total: 00:00:00)
