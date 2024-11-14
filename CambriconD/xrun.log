@@ -1,0 +1,825 @@
+xrun: 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	22.03-s012: Started on Nov 14, 2024 at 01:52:18 CST
+xrun
+	SFU.sv
+	pe_array.sv
+Recompiling... reason: file './pe_array.sv' is newer than expected.
+	expected: Thu Nov 14 01:50:54 2024
+	actual:   Thu Nov 14 01:52:14 2024
+file: SFU.sv
+parameter INT_MIN = -2147483648, // Define INT_MIN 32 bit
+                              |
+xmvlog: *W,SGNOVF (SFU.sv,2|30): sign overflow during conversion from text [2.5(IEEE)] (32 bits).
+file: pe_array.sv
+parameter INT_MIN = -2147483648, // Define INT_MIN 32 bit
+                              |
+xmvlog: *W,SGNOVF (pe_array.sv,4|30): sign overflow during conversion from text [2.5(IEEE)] (32 bits).
+    integer outlier_count = 0;
+                          |
+xmvlog: *W,VARIST (pe_array.sv,29|26): Local static variable with initializer requires 'static' keyword.
+logic overflow_flags [0:INPUT_SIZE-1];
+                   |
+xmvlog: *W,ILLPDX (pe_array.sv,21|19): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'overflow_flags') [12.3.4(IEEE-2001)].
+	module worklib.PE_array_simulator:sv
+		errors: 0, warnings: 3
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		SFU
+		PE_array_simulator
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.PE_array_simulator:sv <0x5f37fed8>
+			streams:   4, words:  4194
+		worklib.SFU:sv <0x0a6ed7d9>
+			streams:   2, words:   672
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		          Instances  Unique
+		Modules:          2       2
+		Registers:       27      46
+		Vectored wires:   1       -
+		Initial blocks:   3       3
+	Writing initial simulation snapshot: worklib.SFU:sv
+Loading snapshot worklib.SFU:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /opt/coe/cadence/XCELIUM/tools/xcelium/files/xmsimrc
+xcelium> run
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 0 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 0 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 1 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 1 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 2 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 2 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 3 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 3 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 4 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 4 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 5 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 5 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 6 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 6 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 7 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 7 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 8 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 8 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 9 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 9 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 10 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 10 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 11 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 11 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 12 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 12 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 13 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 13 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 14 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 14 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 15 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 15 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 16 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 16 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 17 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 17 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 18 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 18 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 19 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 19 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 20 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 20 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 21 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 21 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 22 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 22 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 23 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 23 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 24 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 24 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 25 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 25 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 26 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 26 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 27 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 27 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 28 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 28 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 29 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 29 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 30 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 30 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 31 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 31 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 32 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 32 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 33 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 33 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 34 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 34 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 35 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 35 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 36 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 36 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 37 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 37 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 38 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 38 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 39 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 39 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 40 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 40 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 41 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 41 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 42 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 42 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 43 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 43 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 44 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 44 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 45 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 45 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 46 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 46 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 47 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 47 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 48 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 48 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 49 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 49 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 50 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 50 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 51 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 51 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 52 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 52 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 53 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 53 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 54 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 54 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 55 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 55 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 56 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 56 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 57 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 57 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 58 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 58 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 59 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 59 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 60 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 60 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 61 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 61 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 62 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 62 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 63 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 63 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 64 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 64 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 65 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 65 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 66 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 66 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 67 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 67 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 68 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 68 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 69 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 69 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 70 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 70 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 71 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 71 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 72 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 72 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 73 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 73 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 74 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 74 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 75 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 75 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 76 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 76 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 77 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 77 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 78 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 78 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 79 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 79 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 80 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 80 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 81 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 81 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 82 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 82 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 83 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 83 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 84 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 84 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 85 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 85 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 86 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 86 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 87 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 87 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 88 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 88 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 89 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 89 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 90 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 90 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 91 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 91 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 92 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 92 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 93 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 93 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 94 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 94 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 95 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 95 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 96 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 96 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 97 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 97 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 98 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 98 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 99 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 99 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 100 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 100 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 101 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 101 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 102 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 102 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 103 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 103 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 104 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 104 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 105 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 105 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 106 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 106 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 107 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 107 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 108 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 108 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 109 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 109 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 110 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 110 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 111 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 111 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 112 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 112 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 113 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 113 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 114 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 114 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 115 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 115 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 116 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 116 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 117 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 117 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 118 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 118 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 119 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 119 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 120 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 120 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 121 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 121 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 122 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 122 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 123 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 123 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 124 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 124 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 125 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 125 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 126 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 126 does not exist, 0 items are in the dynamic array.
+            overflow_flags[i] = 0;  
+                         |
+xmsim: *W,RTSDAD (./pe_array.sv,35|25): SystemVerilog dynamic array index 127 does not exist, 0 items are in the dynamic array.
+            quantized_A[i] = $rtoi(A[i]);  
+                      |
+xmsim: *W,RTSDAD (./pe_array.sv,36|22): SystemVerilog dynamic array index 127 does not exist, 0 items are in the dynamic array.
+xmsim: *E,TRASMM: array shape mismatch - no matching element.
+          File: ./pe_array.sv, line = 83, pos = 42
+         Scope: PE_array_simulator.simulate_PE_array
+          Time: 0 FS + 0
+
+./pe_array.sv:83     quantize_activations (A, W, quantized_A, overflow_flags);
+xcelium> exit
+TOOL:	xrun	22.03-s012: Exiting on Nov 14, 2024 at 01:52:19 CST  (total: 00:00:01)
