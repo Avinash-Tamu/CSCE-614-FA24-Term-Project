@@ -2,5 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
-SFU.sv
 pe_array.sv
+tb_cambricon.sv

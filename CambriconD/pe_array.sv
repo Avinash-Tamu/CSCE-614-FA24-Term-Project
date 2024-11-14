@@ -1,3 +1,4 @@
+`timescale 1ns/1ps;
 module PE_array_simulator #(parameter PE_ARRAY_SIZE_X = 128,
 parameter PE_ARRAY_SIZE_Y = 128,
 parameter INT_MAX = 2147483647,  // Define INT_MAX 32 bit 
@@ -7,8 +8,8 @@ parameter THRESHOLD = 100.0,
 parameter N = 60,
 parameter M = 4 
 )(
-    input real A [INPUT_SIZE-1:0],  
-    input real W [INPUT_SIZE-1:0],  
+    input real A [0:INPUT_SIZE-1],  
+    input real W [0:INPUT_SIZE-1],  
     output integer int_dot_product, 
     output integer quantized_inliers [0:INPUT_SIZE-1],
     output  overflow_flags [0:INPUT_SIZE-1],
@@ -21,19 +22,21 @@ integer quantized_A [0:INPUT_SIZE-1];
 logic overflow_flags [0:INPUT_SIZE-1];
 
 function void quantize_activations (
-    input real A[], 
-    input real W[], 
-    output integer quantized_A[], 
-    output logic overflow_flags[]
+    input real A[0:INPUT_SIZE-1], 
+    input real W[0:INPUT_SIZE-1], 
+    output integer quantized_A[0:INPUT_SIZE-1], 
+    output logic overflow_flags[0:INPUT_SIZE-1]
 );
     integer outlier_count = 0;
     for (int i = 0; i < INPUT_SIZE; i++) begin
         if (A[i]> THRESHOLD) begin
             overflow_flags[i] = 1;  
             outlier_count = outlier_count + 1;
+            $display ("ffffff") ;
         end else begin 
             overflow_flags[i] = 0;  
-            quantized_A[i] = $rtoi(A[i]);  
+            quantized_A[i] = $rtoi(A[i]); 
+            $display ("kkkkkkkkkkkkkkkkkkkk") ;
         end
     end
     
@@ -51,10 +54,10 @@ function void quantize_activations (
 endfunction
 
 function void calculate_dot_product (
-    input real A[], 
-    input integer quantized_A[], 
-    input real W[], 
-    input logic overflow_flags[], 
+    input real A[0:INPUT_SIZE-1], 
+    input integer quantized_A[0:INPUT_SIZE-1], 
+    input real W[0:INPUT_SIZE-1], 
+    input logic overflow_flags[0:INPUT_SIZE-1], 
     output integer int_dot_product, 
     output real fp_dot_product, 
     output integer int_multiply, 

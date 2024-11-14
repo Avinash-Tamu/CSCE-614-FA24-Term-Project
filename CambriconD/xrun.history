@@ -25,3 +25,12 @@ s24(14Nov2024:01:49:11):  xrun SFU.sv pe_array.sv
 s25(14Nov2024:01:50:08):  xrun SFU.sv pe_array.sv 
 s26(14Nov2024:01:51:10):  xrun SFU.sv pe_array.sv 
 s27(14Nov2024:01:52:18):  xrun SFU.sv pe_array.sv 
+s28(14Nov2024:02:22:57):  xrun pe_array.sv tb_cambricon.sv 
+s29(14Nov2024:02:26:11):  xrun pe_array.sv tb_cambricon.sv 
+s30(14Nov2024:02:27:41):  xrun pe_array.sv tb_cambricon.sv 
+s31(14Nov2024:02:28:08):  xrun pe_array.sv tb_cambricon.sv 
+s32(14Nov2024:02:31:28):  xrun pe_array.sv tb_cambricon.sv 
+s33(14Nov2024:02:31:52):  xrun pe_array.sv tb_cambricon.sv 
+s34(14Nov2024:02:32:43):  xrun pe_array.sv tb_cambricon.sv 
+s35(14Nov2024:02:33:10):  xrun pe_array.sv tb_cambricon.sv 
+s36(14Nov2024:02:34:29):  xrun pe_array.sv tb_cambricon.sv 
