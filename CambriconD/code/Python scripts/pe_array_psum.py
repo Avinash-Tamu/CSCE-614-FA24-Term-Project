@@ -7,6 +7,7 @@ INT_MAX = 2147483647      # Define INT_MAX for 32-bit integer(INT3)
 INT_MIN = -2147483648     # Define INT_MIN for 32-bit integer(INT3)
 INPUT_SIZE = 128
 THRESHOLD = 100.0
+
 N = 60
 M = 4
 
