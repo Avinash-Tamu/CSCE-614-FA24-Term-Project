@@ -1,4 +1,13 @@
-module conv2d_pe (
+module conv2d_pe #(
+    // Default parameter values that can be overridden during instantiation
+    parameter int N = 8,           // Number of input batches
+    parameter int Hout = 32,       // Output height
+    parameter int Wout = 32,       // Output width
+    parameter int Cin = 3,         // Number of input channels
+    parameter int Cout = 16,       // Number of output channels
+    parameter int Kh = 3,          // Kernel height
+    parameter int Kw = 3           // Kernel width
+)(
     input logic clk,
     input logic reset,
     input logic [31:0] input_activations [0:N-1][0:Hout-1][0:Wout-1][0:Cin-1],
@@ -8,15 +17,6 @@ module conv2d_pe (
     output logic [31:0] conv_output [0:Hout-1][0:Wout-1][0:Cout-1]
 );
 
-    // Parameters
-    parameter int N = 8;
-    parameter int Hout = 32;
-    parameter int Wout = 32;
-    parameter int Cin = 3;
-    parameter int Cout = 16;
-    parameter int Kh = 3;
-    parameter int Kw = 3;
-
     // Quantized activations and overflow flags
     logic [31:0] quantized_activations [0:Kh*Kw*Cin-1];
     logic overflow_flags [0:Kh*Kw*Cin-1];
@@ -24,8 +24,8 @@ module conv2d_pe (
     // Intermediate result for dot product
     logic [63:0] result;
 
-    // Declaring flattened_weights at the module level (outside procedural blocks)
-    logic [31:0] flattened_weights [Kh*Kw*Cin-1:0];
+    // Declare flattened_weights statically (to persist through simulation)
+    logic [31:0] flattened_weights [0:Kh*Kw*Cin-1];
 
     // Helper task to quantize activations
     task quantize_activations(input logic [31:0] activations [0:Kh*Kw*Cin-1],
@@ -103,13 +103,14 @@ module conv2d_pe (
                             logic [31:0] quantized_input [0:Kh*Kw*Cin-1];
                             logic overflow_flags [0:Kh*Kw*Cin-1];
                             for (int idx = 0; idx < Kh*Kw*Cin; idx++) begin
-                                flattened_input[idx] = input_tile[idx];
+                                flattened_input[idx] = input_tile[idx / (Kw * Cin)][(idx / Cin) % Kw][idx % Cin];
                             end
                             quantize_activations(flattened_input, quantized_input, overflow_flags);
 
-                            // Step 4: Perform PE computation
-                            for (int i = 0; i < Kh*Kw*Cin; i++) begin
-                                flattened_weights[i] = weights[i][d2];  // Weights for current output channel
+                            // Step 4: Flatten the weights array for the current output channel (d2)
+                            
+                            for (int i = 0; i < Kh * Kw * Cin; i++) begin
+                                flattened_weights[i] = weights[i / (Kw * Cin)][(i / Cin) % Kw][i % Cin][d2];
                             end
 
                             // Initialize result

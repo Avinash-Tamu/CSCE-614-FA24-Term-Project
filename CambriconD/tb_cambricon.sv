@@ -1,4 +1,7 @@
 `timescale 1ns/1ps
+
+`include "pe_array.sv"
+`include "SFU.sv"
 module tb_PE_array_simulator;
 
   // Parameters
@@ -18,17 +21,35 @@ module tb_PE_array_simulator;
   integer quantized_inliers [INPUT_SIZE];
   logic overflow_flags [INPUT_SIZE];
   real fp_dot_product;
+
+
+
+    logic  sign_bits [INPUT_SIZE];
+     real delta_input [INPUT_SIZE];       
+     logic  outlier_bitmap [INPUT_SIZE]  ;
+     real updated_values [INPUT_SIZE];    
+     logic sfu_flags [INPUT_SIZE];
   
-  // Instantiate the PE_array_simulator module
   PE_array_simulator #(PE_ARRAY_SIZE_X, PE_ARRAY_SIZE_Y, INT_MAX, INT_MIN, INPUT_SIZE, THRESHOLD, N, M)
-    uut (
+    pe_array_inst (
       .A(A),
       .W(W),
       .int_dot_product(int_dot_product),
       .quantized_inliers(quantized_inliers),
       .overflow_flags(overflow_flags),
+      .delta_out(delta_input),
       .fp_dot_product(fp_dot_product)
     );
+
+SFU #(INT_MAX, INT_MIN, INPUT_SIZE) 
+    sfu_inst (
+    .sign_bits(sign_bits),
+    .delta_input(delta_input),
+    .quantized_inliers(quantized_inliers),
+    .outlier_bitmap(overflow_flags),
+    .updated_values(updated_values),
+    .overflow_flags(sfu_flags)
+);
 
   // Testbench initialization and stimulus
   initial begin
@@ -49,7 +70,6 @@ module tb_PE_array_simulator;
       $display("W[%d] = %f", i, W[i]);
     end
     
-    // Wait for a few time units to simulate the PE array
     #1000;
     
     // Display the results
@@ -64,8 +84,6 @@ module tb_PE_array_simulator;
     for (i = 0; i < INPUT_SIZE; i = i + 1) begin
       $display("overflow_flags[%d] = %b", i, overflow_flags[i]);
     end
-
-    // End the simulation
 
     $finish;
   end

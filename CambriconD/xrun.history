@@ -84,3 +84,44 @@ s83(14Nov2024:03:41:43):  xrun pe_array.sv tb_cambricon.sv
 s84(14Nov2024:03:42:23):  xrun pe_array.sv tb_cambricon.sv 
 s85(14Nov2024:03:42:38):  xrun pe_array.sv tb_cambricon.sv 
 s86(14Nov2024:03:43:30):  xrun pe_array.sv tb_cambricon.sv 
+s87(14Nov2024:20:46:42):  xrun tb_cambricon.sv pe_array.sv 
+s88(16Nov2024:10:31:31):  xrun tb_cambricon.sv 
+s89(16Nov2024:10:34:05):  xrun tb_cambricon.sv 
+s90(16Nov2024:10:34:13):  xrun tb_cambricon.sv 
+s91(16Nov2024:10:34:29):  xrun tb_cambricon.sv 
+s92(16Nov2024:16:16:50):  xrun tb_cambricon.sv 
+s93(16Nov2024:16:16:55):  xrun tb_cambricon.sv 
+s94(16Nov2024:23:49:37):  xrun tb_cambricon.sv 
+s95(16Nov2024:23:49:40):  xrun tb_cambricon.sv 
+s96(17Nov2024:00:41:45):  xrun tb_cambricon.sv 
+s97(23Nov2024:16:56:22):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s98(23Nov2024:16:56:39):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s99(23Nov2024:16:57:52):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s100(23Nov2024:16:59:09):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s101(23Nov2024:17:00:13):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s102(23Nov2024:17:00:21):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s103(23Nov2024:17:02:53):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s104(23Nov2024:17:04:34):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s105(23Nov2024:17:06:07):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s106(23Nov2024:17:07:19):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s107(23Nov2024:17:08:17):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s108(23Nov2024:17:09:32):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s109(23Nov2024:17:11:10):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s110(23Nov2024:17:12:37):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s111(23Nov2024:17:12:51):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s112(23Nov2024:17:14:58):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s113(23Nov2024:17:15:27):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s114(23Nov2024:17:16:27):  xrun tb_pe_array_v2.sv pe_array_v2.sv ls 
+s115(23Nov2024:17:16:30):  xrun tb_pe_array_v2.sv pe_array_v2.sv ls 
+s116(23Nov2024:17:16:42):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s117(23Nov2024:17:17:58):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s118(23Nov2024:17:18:24):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s119(23Nov2024:17:20:17):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s120(23Nov2024:17:21:39):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s121(23Nov2024:17:23:46):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s122(23Nov2024:17:26:37):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s123(23Nov2024:17:28:25):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s124(23Nov2024:17:28:45):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s125(23Nov2024:17:29:39):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s126(23Nov2024:17:31:45):  xrun tb_pe_array_v2.sv pe_array_v2.sv 
+s127(23Nov2024:17:32:06):  xrun tb_pe_array_v2.sv pe_array_v2.sv 

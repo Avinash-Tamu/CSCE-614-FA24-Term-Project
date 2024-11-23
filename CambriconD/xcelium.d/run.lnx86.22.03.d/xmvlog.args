@@ -5,8 +5,8 @@
 -XLMODE
 ./xcelium.d/run.lnx86.22.03.d
 -RUNMODE
-pe_array.sv
-tb_cambricon.sv
+tb_pe_array_v2.sv
+pe_array_v2.sv
 -CDSLIB
 ./xcelium.d/run.lnx86.22.03.d/cdsrun.lib
 -HDLVAR
