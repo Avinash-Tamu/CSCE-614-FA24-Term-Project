@@ -42,54 +42,28 @@ module tb_conv2d_pe;
         reset = 1;
         #10 reset = 0;  // Deassert reset after some time
 
-        // Initialize the input activations (example 5x5 input, 1 channel)
-        input_activations[0][0][0][0] = 32'h1;   // Sample values
-        input_activations[0][0][1][0] = 32'h2;
-        input_activations[0][0][2][0] = 32'h3;
-        input_activations[0][0][3][0] = 32'h4;
-        input_activations[0][0][4][0] = 32'h5;
-        input_activations[0][1][0][0] = 32'h6;
-        input_activations[0][1][1][0] = 32'h7;
-        input_activations[0][1][2][0] = 32'h8;
-        input_activations[0][1][3][0] = 32'h9;
-        input_activations[0][1][4][0] = 32'hA;
-        input_activations[0][2][0][0] = 32'hB;
-        input_activations[0][2][1][0] = 32'hC;
-        input_activations[0][2][2][0] = 32'hD;
-        input_activations[0][2][3][0] = 32'hE;
-        input_activations[0][2][4][0] = 32'hF;
-        input_activations[0][3][0][0] = 32'h10;
-        input_activations[0][3][1][0] = 32'h11;
-        input_activations[0][3][2][0] = 32'h12;
-        input_activations[0][3][3][0] = 32'h13;
-        input_activations[0][3][4][0] = 32'h14;
-        input_activations[0][4][0][0] = 32'h15;
-        input_activations[0][4][1][0] = 32'h16;
-        input_activations[0][4][2][0] = 32'h17;
-        input_activations[0][4][3][0] = 32'h18;
-        input_activations[0][4][4][0] = 32'h19;
+        for (int i = 0; i < N; i = i + 1) begin
+            for (int j = 0; j < Hout; j = j + 1) begin
+                for (int k = 0; k < Wout; k = k + 1) begin
+                    input_activations[i][j][k][0] = 32'h1 + (j * Wout + k); // Fill with incremental values (just an example)
+                end
+            end
+        end
 
-        // Initialize the weights (example 3x3 kernel, 1 input channel, 2 output channels)
-        weights[0][0][0][0] = 32'h1;
-        weights[0][1][0][0] = 32'h1;
-        weights[0][2][0][0] = 32'h1;
-        weights[1][0][0][0] = 32'h0;
-        weights[1][1][0][0] = 32'h0;
-        weights[1][2][0][0] = 32'h0;
-        weights[2][0][0][0] = 32'h0;
-        weights[2][1][0][0] = 32'h0;
-        weights[2][2][0][0] = 32'h0;
-
-        // Initialize second output channel weights (for simplicity, keeping the same kernel)
-        weights[0][0][0][1] = 32'h1;
-        weights[0][1][0][1] = 32'h1;
-        weights[0][2][0][1] = 32'h1;
-        weights[1][0][0][1] = 32'h0;
-        weights[1][1][0][1] = 32'h0;
-        weights[1][2][0][1] = 32'h0;
-        weights[2][0][0][1] = 32'h0;
-        weights[2][1][0][1] = 32'h0;
-        weights[2][2][0][1] = 32'h0;
+        // Initialize weights (3x3 kernel, 1 input channel, 2 output channels)
+        for (int i = 0; i < Kh; i = i + 1) begin
+            for (int j = 0; j < Kw; j = j + 1) begin
+                for (int k = 0; k < Cin; k = k + 1) begin
+                    for (int l = 0; l < Cout; l = l + 1) begin
+                        if (l == 0) begin
+                            weights[i][j][k][l] = 32'h1;  // Initialize first output channel with all ones
+                        end else begin
+                            weights[i][j][k][l] = 32'h0;  // Initialize second output channel with all zeros
+                        end
+                    end
+                end
+            end
+        end
 
         // Apply reset and then stimulus
         #10 reset = 0;  // Deassert reset
@@ -97,12 +71,14 @@ module tb_conv2d_pe;
         // Wait for the simulation to run
         #200;
 
-        // Display the results
-        $display("Conv Output at (0,0,0): %h", conv_output[0][0][0]);
-        $display("Conv Output at (0,1,0): %h", conv_output[0][1][0]);
-        $display("Conv Output at (1,1,0): %h", conv_output[1][1][0]);
-        $display("Conv Output at (0,0,1): %h", conv_output[0][0][1]);
-        $display("Conv Output at (1,1,1): %h", conv_output[1][1][1]);
+
+        for (int i = 0; i < Hout; i = i + 1) begin
+            for (int j = 0; j < Wout; j = j + 1) begin
+                for (int k = 0; k < Cout; k = k + 1) begin
+                    $display("Conv Output at (%0d,%0d,%0d): %h", i, j, k, conv_output[i][j][k]);
+                end
+            end
+        end
 
         // End simulation
         $finish;

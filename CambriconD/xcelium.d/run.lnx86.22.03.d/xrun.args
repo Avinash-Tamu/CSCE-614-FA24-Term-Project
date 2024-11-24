@@ -2,5 +2,5 @@
 // File created by:  xrun
 // Do not modify this file
 //
-tb_pe_array_v2.sv
 pe_array_v2.sv
+tb_pe_array_v2.sv

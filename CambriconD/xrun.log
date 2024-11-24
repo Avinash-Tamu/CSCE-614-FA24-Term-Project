@@ -1,28 +1,20 @@
 xrun: 22.03-s012: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun	22.03-s012: Started on Nov 23, 2024 at 17:32:06 CST
+TOOL:	xrun	22.03-s012: Started on Nov 23, 2024 at 18:20:35 CST
 xrun
-	tb_pe_array_v2.sv
 	pe_array_v2.sv
-file: pe_array_v2.sv
-	module worklib.conv2d_pe:sv
-		errors: 0, warnings: 0
+	tb_pe_array_v2.sv
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
 		tb_conv2d_pe
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.conv2d_pe:sv <0x4dcb771c>
-			streams:   4, words:  5724
-		worklib.tb_conv2d_pe:sv <0x25a3a479>
-			streams:   6, words: 12567
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		              Instances  Unique
 		Modules:              2       2
-		Registers:           41      41
+		Registers:           51      51
 		Scalar wires:         2       -
 		Vectored wires:       5       -
 		Always blocks:        2       2
@@ -33,12 +25,57 @@ Loading snapshot worklib.tb_conv2d_pe:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /opt/coe/cadence/XCELIUM/tools/xcelium/files/xmsimrc
 xcelium> run
-Conv Output at (0,0,0): 00000006
-Conv Output at (0,1,0): 00000009
-Conv Output at (1,1,0): 00000018
-Conv Output at (0,0,1): 00000006
-Conv Output at (1,1,1): 00000018
+Conv Output at (0,0,0): 0000003f
+Conv Output at (0,0,1): 00000000
+Conv Output at (0,1,0): 00000048
+Conv Output at (0,1,1): 00000000
+Conv Output at (0,2,0): 00000051
+Conv Output at (0,2,1): 00000000
+Conv Output at (0,3,0): xxxxxxxx
+Conv Output at (0,3,1): xxxxxxxx
+Conv Output at (0,4,0): xxxxxxxx
+Conv Output at (0,4,1): xxxxxxxx
+Conv Output at (1,0,0): 0000006c
+Conv Output at (1,0,1): 00000000
+Conv Output at (1,1,0): 00000075
+Conv Output at (1,1,1): 00000000
+Conv Output at (1,2,0): 0000007e
+Conv Output at (1,2,1): 00000000
+Conv Output at (1,3,0): xxxxxxxx
+Conv Output at (1,3,1): xxxxxxxx
+Conv Output at (1,4,0): xxxxxxxx
+Conv Output at (1,4,1): xxxxxxxx
+Conv Output at (2,0,0): 00000099
+Conv Output at (2,0,1): 00000000
+Conv Output at (2,1,0): 000000a2
+Conv Output at (2,1,1): 00000000
+Conv Output at (2,2,0): 000000ab
+Conv Output at (2,2,1): 00000000
+Conv Output at (2,3,0): xxxxxxxx
+Conv Output at (2,3,1): xxxxxxxx
+Conv Output at (2,4,0): xxxxxxxx
+Conv Output at (2,4,1): xxxxxxxx
+Conv Output at (3,0,0): xxxxxxxx
+Conv Output at (3,0,1): xxxxxxxx
+Conv Output at (3,1,0): xxxxxxxx
+Conv Output at (3,1,1): xxxxxxxx
+Conv Output at (3,2,0): xxxxxxxx
+Conv Output at (3,2,1): xxxxxxxx
+Conv Output at (3,3,0): xxxxxxxx
+Conv Output at (3,3,1): xxxxxxxx
+Conv Output at (3,4,0): xxxxxxxx
+Conv Output at (3,4,1): xxxxxxxx
+Conv Output at (4,0,0): xxxxxxxx
+Conv Output at (4,0,1): xxxxxxxx
+Conv Output at (4,1,0): xxxxxxxx
+Conv Output at (4,1,1): xxxxxxxx
+Conv Output at (4,2,0): xxxxxxxx
+Conv Output at (4,2,1): xxxxxxxx
+Conv Output at (4,3,0): xxxxxxxx
+Conv Output at (4,3,1): xxxxxxxx
+Conv Output at (4,4,0): xxxxxxxx
+Conv Output at (4,4,1): xxxxxxxx
 Simulation complete via $finish(1) at time 220 NS + 0
-./tb_pe_array_v2.sv:108         $finish;
+./tb_pe_array_v2.sv:84         $finish;
 xcelium> exit
-TOOL:	xrun	22.03-s012: Exiting on Nov 23, 2024 at 17:32:08 CST  (total: 00:00:02)
+TOOL:	xrun	22.03-s012: Exiting on Nov 23, 2024 at 18:20:37 CST  (total: 00:00:02)
