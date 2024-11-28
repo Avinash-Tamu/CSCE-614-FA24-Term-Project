@@ -20,7 +20,7 @@ ofmap = np.zeros((MATRIX_DIM, MATRIX_DIM))  # Output feature map (initialized to
 
 # Class for Systolic Array Simulation
 class SystolicArraySimulator:
-    def _init_(self):
+    def __init__(self):
         # Initialize cycle counters and other metrics
         self.total_cycles = 0  # Initialize total cycles
         self.memory_access_cycles = 0
@@ -57,9 +57,9 @@ class SystolicArraySimulator:
         # Memory access cycles (one read per matrix element and one write per output element)
         read_access_cycles = (MATRIX_DIM * MATRIX_DIM * 2)  # ifmap + filter_matrix
         write_access_cycles = MATRIX_DIM * MATRIX_DIM  # ofmap
-        
-        self.memory_access_cycles = read_access_cycles + write_access_cycles
-        self.total_cycles += self.memory_access_cycles
+        for i in range(20):
+            self.memory_access_cycles = read_access_cycles + write_access_cycles
+            self.total_cycles += self.memory_access_cycles
         
         # Memory access time (based on bandwidth)
         memory_access_time = (MATRIX_DIM * MATRIX_DIM * 2 * 8) / MEMORY_BANDWIDTH_BPS  # Convert to bytes
