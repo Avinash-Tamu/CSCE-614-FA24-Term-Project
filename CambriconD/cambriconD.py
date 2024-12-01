@@ -107,21 +107,55 @@ def compute_conv2d_pe(input_activations, weight_vector, kernel_size, quantizatio
     
     return output
 
-# Example input activations and weights (simulating a batch of inputs)
-N, Hout, Wout, Cin = 1, 128, 128, 3  # 1 sample, 128x128 output, 3 input channels (for large output)
-Kh, Kw = 3, 3  # Kernel size (3x3)
-Cout = 64  # Number of output channels (for example, 64 output channels)
+# Define GUID 128 and GUID 512 parameters
+models = {
+    "GUID 128": {"Hout": 64, "Wout": 64, "Cout": 128},
+    "GUID 512": {"Hout": 128, "Wout": 128, "Cout": 512},
+}
 
-# Example input and weight buffers
-input_activations = np.random.rand(N, Hout, Wout, Cin)  # Simulate random input activations
-weight_vector = np.random.rand(Cout, Kh, Kw, Cin)  # Simulate random weights for 64 output channels
 
-# Set the quantization threshold for outlier detection and number of outlier handling multipliers
-quantization_threshold = 0.5  # Threshold for considering an activation as an outlier
+
+#GUID Simulation Prototype
+
+# Common parameters
+N = 1  # Batch size
+Cin = 3  # Input channels
+Kh, Kw = 3, 3  # Kernel size
+quantization_threshold = 0.5  # Threshold for outlier detection
 m = 1  # Number of outliers that can be handled with fp-fp multipliers
 
-# Perform the convolution computation
-output = compute_conv2d_pe(input_activations, weight_vector, (Kh, Kw), quantization_threshold, m)
+# Iterate through models
+for model_name, params in models.items():
+    Hout, Wout, Cout = params["Hout"], params["Wout"], params["Cout"]
+    
+    # Generate input activations and weights
+    input_activations = np.random.rand(N, Hout, Wout, Cin)  # Random activations
+    weight_vector = np.random.rand(Cout, Kh, Kw, Cin)  # Random weights
+    
+    # Run the computation
+    print(f"\nRunning convolution for {model_name}...")
+    output = compute_conv2d_pe(input_activations, weight_vector, (Kh, Kw), quantization_threshold, m)
+
+
+
+
+# Uncomment the below code and comment the above code ("#GUID Simulation Prototype" onwards) for sample model simulation with custom weights and I/O channels
+
+# # Example input activations and weights (simulating a batch of inputs)
+# N, Hout, Wout, Cin = 1, 128, 128, 3  # 1 sample, 128x128 output, 3 input channels (for large output)
+# Kh, Kw = 3, 3  # Kernel size (3x3)
+# Cout = 64  # Number of output channels (for example, 64 output channels)
+
+# # Example input and weight buffers
+# input_activations = np.random.rand(N, Hout, Wout, Cin)  # Simulate random input activations
+# weight_vector = np.random.rand(Cout, Kh, Kw, Cin)  # Simulate random weights for 64 output channels
+
+# # Set the quantization threshold for outlier detection and number of outlier handling multipliers
+# quantization_threshold = 0.5  # Threshold for considering an activation as an outlier
+# m = 1  # Number of outliers that can be handled with fp-fp multipliers
+
+# # Perform the convolution computation
+# output = compute_conv2d_pe(input_activations, weight_vector, (Kh, Kw), quantization_threshold, m)
 
 # Output the result (this won't print output as we are focusing on the iteration counts)
 # print("Convolution result:")
